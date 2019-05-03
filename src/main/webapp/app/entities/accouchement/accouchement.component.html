@@ -1,0 +1,148 @@
+<div>
+    <h2 id="page-heading">
+        <span>Accouchements</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-accouchement" [routerLink]="['/accouchement/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Accouchement
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="accouchements">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+             <th></th>   
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numeroEntree"><span>Numero Entree</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="age"><span>Age</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="provenance"><span>Provenance</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adresse"><span>Adresse</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="parite"><span>Parite</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="gestite"><span>Gestite</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="enfantVivant"><span>Enfant Vivant</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mortNe"><span>Mort Ne</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fausseCouche"><span>Fausse Couche</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="avortement"><span>Avortement</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mFIU"><span>M FIU</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nombreCesarienne"><span>Nombre Cesarienne</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dateDerniereCS"><span>Date Derniere CS</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="typeDerniereCS"><span>Type Derniere CS</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="indicationDerniereCS"><span>Indication Derniere CS</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="grossesseSuivis"><span>Grossesse Suivis</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ageGestationnel"><span>Age Gestationnel</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="hB"><span>H B</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="siphilis"><span>Siphilis</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="gAJ"><span>G AJ</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="groupage"><span>Groupage</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tA"><span>T A</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bCF"><span>B CF</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="hU"><span>H U</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="etatDeCol"><span>Etat De Col</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="etatPDE"><span>Etat PDE</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="liquideAmneotique"><span>Liquide Amneotique</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numeroDeFoetus"><span>Numero De Foetus</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="etatDeBassin"><span>Etat De Bassin</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="typeCesarienne"><span>Type Cesarienne</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cesarienneEtTravail"><span>Cesarienne Et Travail</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modeAnesthesie"><span>Mode Anesthesie</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="typeHysterotomie"><span>Type Hysterotomie</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="incidentPerOperatoire"><span>Incident Per Operatoire</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="gesteAssocie"><span>Geste Associe</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="suitePosteOperatoire"><span>Suite Poste Operatoire</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="typeDelivrance"><span>Type Delivrance</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="revisionUteriene"><span>Revision Uteriene</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dureeHospit"><span>Duree Hospit</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mortalite"><span>Mortalite</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="apgar1Minute"><span>Apgar 1 Minute</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="apgar5Minute"><span>Apgar 5 Minute</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="poids"><span>Poids</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sexe"><span>Sexe</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="aspect"><span>Aspect</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="vitamineK"><span>Vitamine K</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="hB1"><span>H B 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let accouchement of accouchements ;trackBy: trackId">
+                                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/accouchement', accouchement.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/accouchement', accouchement.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'accouchement', { outlets: { popup: accouchement.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+                <td><a [routerLink]="['/accouchement', accouchement.id, 'view' ]">{{accouchement.id}}</a></td>
+                <td>{{accouchement.numeroEntree}}</td>
+                <td>{{accouchement.age}}</td>
+                <td>{{accouchement.provenance}}</td>
+                <td>{{accouchement.adresse}}</td>
+                <td>{{accouchement.parite}}</td>
+                <td>{{accouchement.gestite}}</td>
+                <td>{{accouchement.enfantVivant}}</td>
+                <td>{{accouchement.mortNe}}</td>
+                <td>{{accouchement.fausseCouche}}</td>
+                <td>{{accouchement.avortement}}</td>
+                <td>{{accouchement.mFIU}}</td>
+                <td>{{accouchement.nombreCesarienne}}</td>
+                <td>{{accouchement.dateDerniereCS}}</td>
+                <td>{{accouchement.typeDerniereCS}}</td>
+                <td>{{accouchement.indicationDerniereCS}}</td>
+                <td>{{accouchement.grossesseSuivis}}</td>
+                <td>{{accouchement.ageGestationnel}}</td>
+                <td>{{accouchement.hB}}</td>
+                <td>{{accouchement.siphilis}}</td>
+                <td>{{accouchement.gAJ}}</td>
+                <td>{{accouchement.groupage}}</td>
+                <td>{{accouchement.tA}}</td>
+                <td>{{accouchement.bCF}}</td>
+                <td>{{accouchement.hU}}</td>
+                <td>{{accouchement.etatDeCol}}</td>
+                <td>{{accouchement.etatPDE}}</td>
+                <td>{{accouchement.liquideAmneotique}}</td>
+                <td>{{accouchement.numeroDeFoetus}}</td>
+                <td>{{accouchement.etatDeBassin}}</td>
+                <td>{{accouchement.typeCesarienne}}</td>
+                <td>{{accouchement.cesarienneEtTravail}}</td>
+                <td>{{accouchement.modeAnesthesie}}</td>
+                <td>{{accouchement.typeHysterotomie}}</td>
+                <td>{{accouchement.incidentPerOperatoire}}</td>
+                <td>{{accouchement.gesteAssocie}}</td>
+                <td>{{accouchement.suitePosteOperatoire}}</td>
+                <td>{{accouchement.typeDelivrance}}</td>
+                <td>{{accouchement.revisionUteriene}}</td>
+                <td>{{accouchement.dureeHospit}}</td>
+                <td>{{accouchement.mortalite}}</td>
+                <td>{{accouchement.apgar1Minute}}</td>
+                <td>{{accouchement.apgar5Minute}}</td>
+                <td>{{accouchement.poids}}</td>
+                <td>{{accouchement.sexe}}</td>
+                <td>{{accouchement.aspect}}</td>
+                <td>{{accouchement.vitamineK}}</td>
+                <td>{{accouchement.hB1}}</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

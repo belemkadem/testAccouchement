@@ -1,0 +1,271 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accouchement">
+            <h2><span>Accouchement</span> {{accouchement.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Numero Entree</span></dt>
+                <dd>
+                    <span>{{accouchement.numeroEntree}}</span>
+                </dd>
+                <dt><span>Age</span></dt>
+                <dd>
+                    <span>{{accouchement.age}}</span>
+                </dd>
+                <dt><span>Provenance</span></dt>
+                <dd>
+                    <span>{{accouchement.provenance}}</span>
+                </dd>
+                <dt><span>Adresse</span></dt>
+                <dd>
+                    <span>{{accouchement.adresse}}</span>
+                </dd>
+                <dt><span>Parite</span></dt>
+                <dd>
+                    <span>{{accouchement.parite}}</span>
+                </dd>
+                <dt><span>Gestite</span></dt>
+                <dd>
+                    <span>{{accouchement.gestite}}</span>
+                </dd>
+                <dt><span>Enfant Vivant</span></dt>
+                <dd>
+                    <span>{{accouchement.enfantVivant}}</span>
+                </dd>
+                <dt><span>Mort Ne</span></dt>
+                <dd>
+                    <span>{{accouchement.mortNe}}</span>
+                </dd>
+                <dt><span>Fausse Couche</span></dt>
+                <dd>
+                    <span>{{accouchement.fausseCouche}}</span>
+                </dd>
+                <dt><span>Avortement</span></dt>
+                <dd>
+                    <span>{{accouchement.avortement}}</span>
+                </dd>
+                <dt><span>M FIU</span></dt>
+                <dd>
+                    <span>{{accouchement.mFIU}}</span>
+                </dd>
+                <dt><span>Nombre Cesarienne</span></dt>
+                <dd>
+                    <span>{{accouchement.nombreCesarienne}}</span>
+                </dd>
+                <dt><span>Date Derniere CS</span></dt>
+                <dd>
+                    <span>{{accouchement.dateDerniereCS}}</span>
+                </dd>
+                <dt><span>Type Derniere CS</span></dt>
+                <dd>
+                    <span>{{accouchement.typeDerniereCS}}</span>
+                </dd>
+                <dt><span>Indication Derniere CS</span></dt>
+                <dd>
+                    <span>{{accouchement.indicationDerniereCS}}</span>
+                </dd>
+                <dt><span>Grossesse Suivis</span></dt>
+                <dd>
+                    <span>{{accouchement.grossesseSuivis}}</span>
+                </dd>
+                <dt><span>Age Gestationnel</span></dt>
+                <dd>
+                    <span>{{accouchement.ageGestationnel}}</span>
+                </dd>
+                <dt><span>H B</span></dt>
+                <dd>
+                    <span>{{accouchement.hB}}</span>
+                </dd>
+                <dt><span>Siphilis</span></dt>
+                <dd>
+                    <span>{{accouchement.siphilis}}</span>
+                </dd>
+                <dt><span>G AJ</span></dt>
+                <dd>
+                    <span>{{accouchement.gAJ}}</span>
+                </dd>
+                <dt><span>Groupage</span></dt>
+                <dd>
+                    <span>{{accouchement.groupage}}</span>
+                </dd>
+                <dt><span>T A</span></dt>
+                <dd>
+                    <span>{{accouchement.tA}}</span>
+                </dd>
+                <dt><span>B CF</span></dt>
+                <dd>
+                    <span>{{accouchement.bCF}}</span>
+                </dd>
+                <dt><span>H U</span></dt>
+                <dd>
+                    <span>{{accouchement.hU}}</span>
+                </dd>
+                <dt><span>Etat De Col</span></dt>
+                <dd>
+                    <span>{{accouchement.etatDeCol}}</span>
+                </dd>
+                <dt><span>Etat PDE</span></dt>
+                <dd>
+                    <span>{{accouchement.etatPDE}}</span>
+                </dd>
+                <dt><span>Liquide Amneotique</span></dt>
+                <dd>
+                    <span>{{accouchement.liquideAmneotique}}</span>
+                </dd>
+                <dt><span>Numero De Foetus</span></dt>
+                <dd>
+                    <span>{{accouchement.numeroDeFoetus}}</span>
+                </dd>
+                <dt><span>Etat De Bassin</span></dt>
+                <dd>
+                    <span>{{accouchement.etatDeBassin}}</span>
+                </dd>
+                <dt><span>Type Cesarienne</span></dt>
+                <dd>
+                    <span>{{accouchement.typeCesarienne}}</span>
+                </dd>
+                <dt><span>Cesarienne Et Travail</span></dt>
+                <dd>
+                    <span>{{accouchement.cesarienneEtTravail}}</span>
+                </dd>
+                <dt><span>Mode Anesthesie</span></dt>
+                <dd>
+                    <span>{{accouchement.modeAnesthesie}}</span>
+                </dd>
+                <dt><span>Type Hysterotomie</span></dt>
+                <dd>
+                    <span>{{accouchement.typeHysterotomie}}</span>
+                </dd>
+                <dt><span>Incident Per Operatoire</span></dt>
+                <dd>
+                    <span>{{accouchement.incidentPerOperatoire}}</span>
+                </dd>
+                <dt><span>Geste Associe</span></dt>
+                <dd>
+                    <span>{{accouchement.gesteAssocie}}</span>
+                </dd>
+                <dt><span>Suite Poste Operatoire</span></dt>
+                <dd>
+                    <span>{{accouchement.suitePosteOperatoire}}</span>
+                </dd>
+                <dt><span>Type Delivrance</span></dt>
+                <dd>
+                    <span>{{accouchement.typeDelivrance}}</span>
+                </dd>
+                <dt><span>Revision Uteriene</span></dt>
+                <dd>
+                    <span>{{accouchement.revisionUteriene}}</span>
+                </dd>
+                <dt><span>Duree Hospit</span></dt>
+                <dd>
+                    <span>{{accouchement.dureeHospit}}</span>
+                </dd>
+                <dt><span>Mortalite</span></dt>
+                <dd>
+                    <span>{{accouchement.mortalite}}</span>
+                </dd>
+                <dt><span>Apgar 1 Minute</span></dt>
+                <dd>
+                    <span>{{accouchement.apgar1Minute}}</span>
+                </dd>
+                <dt><span>Apgar 5 Minute</span></dt>
+                <dd>
+                    <span>{{accouchement.apgar5Minute}}</span>
+                </dd>
+                <dt><span>Poids</span></dt>
+                <dd>
+                    <span>{{accouchement.poids}}</span>
+                </dd>
+                <dt><span>Sexe</span></dt>
+                <dd>
+                    <span>{{accouchement.sexe}}</span>
+                </dd>
+                <dt><span>Aspect</span></dt>
+                <dd>
+                    <span>{{accouchement.aspect}}</span>
+                </dd>
+                <dt><span>Vitamine K</span></dt>
+                <dd>
+                    <span>{{accouchement.vitamineK}}</span>
+                </dd>
+                <dt><span>H B 1</span></dt>
+                <dd>
+                    <span>{{accouchement.hB1}}</span>
+                </dd>
+                <dt><span>Antecedent Chirurgical</span></dt>
+                <dd>
+                    <span *ngFor="let antecedentChirurgical of accouchement.antecedentChirurgicals; let last = last">
+                        <a [routerLink]="['/antecedent-chirurgical', antecedentChirurgical?.id, 'view' ]">{{antecedentChirurgical.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Antecedent Medical</span></dt>
+                <dd>
+                    <span *ngFor="let antecedentMedical of accouchement.antecedentMedicals; let last = last">
+                        <a [routerLink]="['/antecedent-medical', antecedentMedical?.id, 'view' ]">{{antecedentMedical.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Antecedent Gyneco</span></dt>
+                <dd>
+                    <span *ngFor="let antecedentGyneco of accouchement.antecedentGynecos; let last = last">
+                        <a [routerLink]="['/antecedent-gyneco', antecedentGyneco?.id, 'view' ]">{{antecedentGyneco.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Antecedent Obstetrico</span></dt>
+                <dd>
+                    <span *ngFor="let antecedentObstetrico of accouchement.antecedentObstetricos; let last = last">
+                        <a [routerLink]="['/antecedent-obstetrico', antecedentObstetrico?.id, 'view' ]">{{antecedentObstetrico.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Indication De CS</span></dt>
+                <dd>
+                    <span *ngFor="let indicationDeCS of accouchement.indicationDeCS; let last = last">
+                        <a [routerLink]="['/indication-cs', indicationDeCS?.id, 'view' ]">{{indicationDeCS.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Complication Poste Op</span></dt>
+                <dd>
+                    <span *ngFor="let complicationPosteOp of accouchement.complicationPosteOps; let last = last">
+                        <a [routerLink]="['/complication-poste-op', complicationPosteOp?.id, 'view' ]">{{complicationPosteOp.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Pathologie Actuelle</span></dt>
+                <dd>
+                    <span *ngFor="let pathologieActuelle of accouchement.pathologieActuelles; let last = last">
+                        <a [routerLink]="['/pathologie-actuelle', pathologieActuelle?.id, 'view' ]">{{pathologieActuelle.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Complication Per Op</span></dt>
+                <dd>
+                    <span *ngFor="let complicationPerOp of accouchement.complicationPerOps; let last = last">
+                        <a [routerLink]="['/complication-per-op', complicationPerOp?.id, 'view' ]">{{complicationPerOp.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Malformation</span></dt>
+                <dd>
+                    <span *ngFor="let malformation of accouchement.malformations; let last = last">
+                        <a [routerLink]="['/malformation', malformation?.id, 'view' ]">{{malformation.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Complication NNE</span></dt>
+                <dd>
+                    <span *ngFor="let complicationNNE of accouchement.complicationNNES; let last = last">
+                        <a [routerLink]="['/complication-nne', complicationNNE?.id, 'view' ]">{{complicationNNE.designation}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/accouchement', accouchement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

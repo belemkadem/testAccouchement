@@ -1,0 +1,28 @@
+{
+    "name": "ComplicationPosteOp",
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "accouchement",
+            "otherEntityRelationshipName": "complicationPosteOp",
+            "relationshipName": "accouchement",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190430230252",
+    "entityTableName": "complication_poste_op",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

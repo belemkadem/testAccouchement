@@ -1,0 +1,28 @@
+{
+    "name": "ComplicationNNE",
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "accouchement",
+            "otherEntityRelationshipName": "complicationNNE",
+            "relationshipName": "accouchement",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190501203032",
+    "entityTableName": "complication_nne",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

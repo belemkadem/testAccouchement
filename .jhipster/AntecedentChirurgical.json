@@ -1,0 +1,28 @@
+{
+    "name": "AntecedentChirurgical",
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "accouchement",
+            "otherEntityRelationshipName": "antecedentChirurgical",
+            "relationshipName": "accouchement",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190430204858",
+    "entityTableName": "antecedent_chirurgical",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

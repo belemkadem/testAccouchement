@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Accouchement.
+    -->
+    <changeSet id="20190430204901-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_antecedent_chirurgical"
+                                 constraintName="fk_accouchement_antecedent_chirurgical_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="antecedent_chirurgical_id"
+                                 baseTableName="accouchement_antecedent_chirurgical"
+                                 constraintName="accouchement_antecedent_chirur_antecedent_chirurgical_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antecedent_chirurgical"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_antecedent_medical"
+                                 constraintName="fk_accouchement_antecedent_medical_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="antecedent_medical_id"
+                                 baseTableName="accouchement_antecedent_medical"
+                                 constraintName="fk_accouchement_antecedent_medical_antecedent_medical_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antecedent_medical"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_antecedent_gyneco"
+                                 constraintName="fk_accouchement_antecedent_gyneco_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="antecedent_gyneco_id"
+                                 baseTableName="accouchement_antecedent_gyneco"
+                                 constraintName="fk_accouchement_antecedent_gyneco_antecedent_gyneco_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antecedent_gyneco"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_antecedent_obstetrico"
+                                 constraintName="fk_accouchement_antecedent_obstetrico_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="antecedent_obstetrico_id"
+                                 baseTableName="accouchement_antecedent_obstetrico"
+                                 constraintName="fk_accouchement_antecedent_obstetrico_antecedent_obstetrico_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antecedent_obstetrico"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_indication_decs"
+                                 constraintName="fk_accouchement_indication_decs_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="indication_decs_id"
+                                 baseTableName="accouchement_indication_decs"
+                                 constraintName="fk_accouchement_indication_decs_indication_decs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="indication_cs"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_complication_poste_op"
+                                 constraintName="fk_accouchement_complication_poste_op_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="complication_poste_op_id"
+                                 baseTableName="accouchement_complication_poste_op"
+                                 constraintName="fk_accouchement_complication_poste_op_complication_poste_op_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="complication_poste_op"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_pathologie_actuelle"
+                                 constraintName="fk_accouchement_pathologie_actuelle_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="pathologie_actuelle_id"
+                                 baseTableName="accouchement_pathologie_actuelle"
+                                 constraintName="fk_accouchement_pathologie_actuelle_pathologie_actuelle_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pathologie_actuelle"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_complication_per_op"
+                                 constraintName="fk_accouchement_complication_per_op_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="complication_per_op_id"
+                                 baseTableName="accouchement_complication_per_op"
+                                 constraintName="fk_accouchement_complication_per_op_complication_per_op_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="complication_per_op"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_malformation"
+                                 constraintName="fk_accouchement_malformation_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="malformation_id"
+                                 baseTableName="accouchement_malformation"
+                                 constraintName="fk_accouchement_malformation_malformation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="malformation"/>
+        
+        <addForeignKeyConstraint baseColumnNames="accouchement_id"
+                                 baseTableName="accouchement_complicationnne"
+                                 constraintName="fk_accouchement_complicationnne_accouchement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accouchement"/>
+        <addForeignKeyConstraint baseColumnNames="complicationnne_id"
+                                 baseTableName="accouchement_complicationnne"
+                                 constraintName="fk_accouchement_complicationnne_complicationnne_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="complication_nne"/>
+        
+    </changeSet>
+</databaseChangeLog>

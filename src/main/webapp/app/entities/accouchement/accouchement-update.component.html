@@ -1,0 +1,512 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-accouchement-heading">Create or edit a Accouchement</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!accouchement.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="accouchement.id" readonly />
+                </div>
+
+                <table style="width: 100%;">
+                    <tr><td> <h3>Identité</h3></td></tr>
+                    <tr><td> 
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numeroEntree">Numero Entree</label>
+                    <input type="text" class="form-control" name="numeroEntree" id="field_numeroEntree"
+                        [(ngModel)]="accouchement.numeroEntree" required/>
+                    <div [hidden]="!(editForm.controls.numeroEntree?.dirty && editForm.controls.numeroEntree?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.numeroEntree?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_age">Age</label>
+                    <input type="number" class="form-control" name="age" id="field_age"
+                        [(ngModel)]="accouchement.age" required/>
+                    <div [hidden]="!(editForm.controls.age?.dirty && editForm.controls.age?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.age?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.age?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+               </td></tr>
+                <tr><td> 
+                <div class="form-group">
+                    <label class="form-control-label" for="field_provenance">Provenance</label>
+                    <select class="form-control" name="provenance" [(ngModel)]="accouchement.provenance" id="field_provenance" >
+                        <option value="RURAL">RURAL</option>
+                        <option value="URABAIN">URABAIN</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                        [(ngModel)]="accouchement.adresse" />
+                </div>
+                </td></tr>
+
+                <tr><td> <h3>Antecedants</h3></td></tr>
+                 <tr><td>
+                <div class="form-group">
+                    <label for="field_antecedentChirurgical">Antecedent Chirurgical</label>
+                    <select class="form-control" id="field_antecedentChirurgical" multiple name="antecedentChirurgical" [(ngModel)]="accouchement.antecedentChirurgicals">
+                        <option [ngValue]="getSelected(accouchement.antecedentChirurgicals, antecedentChirurgicalOption)" *ngFor="let antecedentChirurgicalOption of antecedentchirurgicals; trackBy: trackAntecedentChirurgicalById">{{antecedentChirurgicalOption.designation}}</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label for="field_antecedentMedical">Antecedent Medical</label>
+                    <select class="form-control" id="field_antecedentMedical" multiple name="antecedentMedical" [(ngModel)]="accouchement.antecedentMedicals">
+                        <option [ngValue]="getSelected(accouchement.antecedentMedicals, antecedentMedicalOption)" *ngFor="let antecedentMedicalOption of antecedentmedicals; trackBy: trackAntecedentMedicalById">{{antecedentMedicalOption.designation}}</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label for="field_antecedentGyneco">Antecedent Gyneco</label>
+                    <select class="form-control" id="field_antecedentGyneco" multiple name="antecedentGyneco" [(ngModel)]="accouchement.antecedentGynecos">
+                        <option [ngValue]="getSelected(accouchement.antecedentGynecos, antecedentGynecoOption)" *ngFor="let antecedentGynecoOption of antecedentgynecos; trackBy: trackAntecedentGynecoById">{{antecedentGynecoOption.designation}}</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label for="field_antecedentObstetrico">Antecedent Obstetrico</label>
+                    <select class="form-control" id="field_antecedentObstetrico" multiple name="antecedentObstetrico" [(ngModel)]="accouchement.antecedentObstetricos">
+                        <option [ngValue]="getSelected(accouchement.antecedentObstetricos, antecedentObstetricoOption)" *ngFor="let antecedentObstetricoOption of antecedentobstetricos; trackBy: trackAntecedentObstetricoById">{{antecedentObstetricoOption.designation}}</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td> 
+                <div class="form-group">
+                    <label class="form-control-label" for="field_parite">Parite</label>
+                    <input type="number" class="form-control" name="parite" id="field_parite"
+                        [(ngModel)]="accouchement.parite" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gestite">Gestite</label>
+                    <input type="number" class="form-control" name="gestite" id="field_gestite"
+                        [(ngModel)]="accouchement.gestite" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_enfantVivant">Enfant Vivant</label>
+                    <input type="number" class="form-control" name="enfantVivant" id="field_enfantVivant"
+                        [(ngModel)]="accouchement.enfantVivant" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mortNe">Mort Ne</label>
+                    <input type="number" class="form-control" name="mortNe" id="field_mortNe"
+                        [(ngModel)]="accouchement.mortNe" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fausseCouche">Fausse Couche</label>
+                    <input type="number" class="form-control" name="fausseCouche" id="field_fausseCouche"
+                        [(ngModel)]="accouchement.fausseCouche" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_avortement">Avortement</label>
+                    <input type="number" class="form-control" name="avortement" id="field_avortement"
+                        [(ngModel)]="accouchement.avortement" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mFIU">M FIU</label>
+                    <input type="number" class="form-control" name="mFIU" id="field_mFIU"
+                        [(ngModel)]="accouchement.mFIU" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nombreCesarienne">Nombre Cesarienne</label>
+                    <input type="number" class="form-control" name="nombreCesarienne" id="field_nombreCesarienne"
+                        [(ngModel)]="accouchement.nombreCesarienne" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dateDerniereCS">Date Derniere CS</label>
+                    <input type="number" class="form-control" name="dateDerniereCS" id="field_dateDerniereCS"
+                        [(ngModel)]="accouchement.dateDerniereCS" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeDerniereCS">Type Derniere CS</label>
+                    <select class="form-control" name="typeDerniereCS" [(ngModel)]="accouchement.typeDerniereCS" id="field_typeDerniereCS" >
+                        <option value="TRANSVERSE">TRANSVERSE</option>
+                        <option value="CORPOREAL">CORPOREAL</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_indicationDerniereCS">Indication Derniere CS</label>
+                    <input type="text" class="form-control" name="indicationDerniereCS" id="field_indicationDerniereCS"
+                        [(ngModel)]="accouchement.indicationDerniereCS" />
+                </div>
+                </td><td>
+                </td></tr>
+<tr><td> <h3>Grossesse actuelle</h3></td></tr>
+                
+                <tr><td>
+                
+                <div class="form-group">
+                    <label class="form-control-label" for="field_grossesseSuivis">Grossesse Suivis</label>
+                    <select class="form-control" name="grossesseSuivis" [(ngModel)]="accouchement.grossesseSuivis" id="field_grossesseSuivis" >
+                        <option value="OUI">OUI</option>
+                        <option value="NON">NON</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td>
+                <td>   
+                 <div class="form-group">
+                    <label class="form-control-label" for="field_ageGestationnel">Age Gestationnel</label>
+                    <input type="number" class="form-control" name="ageGestationnel" id="field_ageGestationnel"
+                        [(ngModel)]="accouchement.ageGestationnel" />
+                </div></td>
+                </tr>
+                <tr><td>
+
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hB">H B</label>
+                    <input type="number" class="form-control" name="hB" id="field_hB"
+                        [(ngModel)]="accouchement.hB" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_siphilis">Siphilis</label>
+                    <select class="form-control" name="siphilis" [(ngModel)]="accouchement.siphilis" id="field_siphilis" >
+                        <option value="POSITIF">POSITIF</option>
+                        <option value="NEGATIF">NEGATIF</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gAJ">G AJ</label>
+                    <input type="number" class="form-control" name="gAJ" id="field_gAJ"
+                        [(ngModel)]="accouchement.gAJ" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_groupage">Groupage</label>
+                    <select class="form-control" name="groupage" [(ngModel)]="accouchement.groupage" id="field_groupage" >
+                        <option value="OP">OP</option>
+                        <option value="OM">OM</option>
+                        <option value="AM">AM</option>
+                        <option value="AP">AP</option>
+                        <option value="BM">BM</option>
+                        <option value="BP">BP</option>
+                        <option value="ABP">ABP</option>
+                        <option value="ABM">ABM</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label for="field_pathologieActuelle">Pathologie Actuelle</label>
+                    <select class="form-control" id="field_pathologieActuelle" multiple name="pathologieActuelle" [(ngModel)]="accouchement.pathologieActuelles">
+                        <option [ngValue]="getSelected(accouchement.pathologieActuelles, pathologieActuelleOption)" *ngFor="let pathologieActuelleOption of pathologieactuelles; trackBy: trackPathologieActuelleById">{{pathologieActuelleOption.designation}}</option>
+                    </select>
+                </div>
+                </td></tr>
+<tr><td> <h3>Examen à l'admission</h3></td></tr>                
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tA">T A</label>
+                    <input type="number" class="form-control" name="tA" id="field_tA"
+                        [(ngModel)]="accouchement.tA" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bCF">B CF</label>
+                    <input type="number" class="form-control" name="bCF" id="field_bCF"
+                        [(ngModel)]="accouchement.bCF" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hU">H U</label>
+                    <input type="number" class="form-control" name="hU" id="field_hU"
+                        [(ngModel)]="accouchement.hU" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_etatDeCol">Etat De Col</label>
+                    <input type="number" class="form-control" name="etatDeCol" id="field_etatDeCol"
+                        [(ngModel)]="accouchement.etatDeCol" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_etatPDE">Etat PDE</label>
+                    <select class="form-control" name="etatPDE" [(ngModel)]="accouchement.etatPDE" id="field_etatPDE" >
+                        <option value="INTACTE">INTACTE</option>
+                        <option value="ROMPUE">ROMPUE</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_liquideAmneotique">Liquide Amneotique</label>
+                    <select class="form-control" name="liquideAmneotique" [(ngModel)]="accouchement.liquideAmneotique" id="field_liquideAmneotique" >
+                        <option value="CLAIR">CLAIR</option>
+                        <option value="TEINTE">TEINTE</option>
+                        <option value="PUREE_DE_POIS">PUREE_DE_POIS</option>
+                        <option value="MECONIALE">MECONIALE</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_numeroDeFoetus">Numero De Foetus</label>
+                    <input type="number" class="form-control" name="numeroDeFoetus" id="field_numeroDeFoetus"
+                        [(ngModel)]="accouchement.numeroDeFoetus" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_etatDeBassin">Etat De Bassin</label>
+                    <select class="form-control" name="etatDeBassin" [(ngModel)]="accouchement.etatDeBassin" id="field_etatDeBassin" >
+                        <option value="RETRECI">RETRECI</option>
+                        <option value="PATHOLOGIQUE">PATHOLOGIQUE</option>
+                        <option value="NORMAL">NORMAL</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td> <h3>LA CESARIENNE</h3></td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeCesarienne">Type Cesarienne</label>
+                    <select class="form-control" name="typeCesarienne" [(ngModel)]="accouchement.typeCesarienne" id="field_typeCesarienne" >
+                        <option value="PROGRAMME">PROGRAMME</option>
+                        <option value="URGENCE">URGENCE</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cesarienneEtTravail">Cesarienne Et Travail</label>
+                    <select class="form-control" name="cesarienneEtTravail" [(ngModel)]="accouchement.cesarienneEtTravail" id="field_cesarienneEtTravail" >
+                        <option value="AU_COURS">AU_COURS</option>
+                        <option value="EN_DEHORS">EN_DEHORS</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td>
+                 <div class="form-group">
+                    <label for="field_indicationDeCS">Indication De CS</label>
+                    <select class="form-control" id="field_indicationDeCS" multiple name="indicationDeCS" [(ngModel)]="accouchement.indicationDeCS">
+                        <option [ngValue]="getSelected(accouchement.indicationDeCS, indicationCSOption)" *ngFor="let indicationCSOption of indicationcs; trackBy: trackIndicationCSById">{{indicationCSOption.designation}}</option>
+                    </select>
+                </div>
+                 </td> <td></td></tr>   
+
+                 <tr><td> <h3>TECHNIQUES OPERATOIRES</h3></td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_modeAnesthesie">Mode Anesthesie</label>
+                    <select class="form-control" name="modeAnesthesie" [(ngModel)]="accouchement.modeAnesthesie" id="field_modeAnesthesie" >
+                        <option value="AG">AG</option>
+                        <option value="PERIDURALE">PERIDURALE</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeHysterotomie">Type Hysterotomie</label>
+                    <select class="form-control" name="typeHysterotomie" [(ngModel)]="accouchement.typeHysterotomie" id="field_typeHysterotomie" >
+                        <option value="TRANSVERSE">TRANSVERSE</option>
+                        <option value="CORPOREAL">CORPOREAL</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_incidentPerOperatoire">Incident Per Operatoire</label>
+                    <input type="text" class="form-control" name="incidentPerOperatoire" id="field_incidentPerOperatoire"
+                        [(ngModel)]="accouchement.incidentPerOperatoire" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gesteAssocie">Geste Associe</label>
+                    <input type="text" class="form-control" name="gesteAssocie" id="field_gesteAssocie"
+                        [(ngModel)]="accouchement.gesteAssocie" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_suitePosteOperatoire">Suite Poste Operatoire</label>
+                    <input type="text" class="form-control" name="suitePosteOperatoire" id="field_suitePosteOperatoire"
+                        [(ngModel)]="accouchement.suitePosteOperatoire" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeDelivrance">Type Delivrance</label>
+                    <input type="text" class="form-control" name="typeDelivrance" id="field_typeDelivrance"
+                        [(ngModel)]="accouchement.typeDelivrance" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_revisionUteriene">Revision Uteriene</label>
+                    <select class="form-control" name="revisionUteriene" [(ngModel)]="accouchement.revisionUteriene" id="field_revisionUteriene" >
+                        <option value="OUI">OUI</option>
+                        <option value="NON">NON</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td><td>
+
+                </td></tr>
+
+                <tr><td> <h3>PRONOSTIC MATERNEL</h3></td></tr>
+                <tr>
+                    <td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dureeHospit">Duree Hospit</label>
+                    <input type="number" class="form-control" name="dureeHospit" id="field_dureeHospit"
+                        [(ngModel)]="accouchement.dureeHospit" />
+                </div>
+
+                    </td>
+                    <td>
+
+                <div class="form-group">
+                    <label for="field_complicationPerOp">Complication Per Op</label>
+                    <select class="form-control" id="field_complicationPerOp" multiple name="complicationPerOp" [(ngModel)]="accouchement.complicationPerOps">
+                        <option [ngValue]="getSelected(accouchement.complicationPerOps, complicationPerOpOption)" *ngFor="let complicationPerOpOption of complicationperops; trackBy: trackComplicationPerOpById">{{complicationPerOpOption.designation}}</option>
+                    </select>
+                </div>
+                    </td>
+
+                </tr>
+                <tr><td>
+                <div class="form-group">
+                    <label for="field_complicationPosteOp">Complication Poste Op</label>
+                    <select class="form-control" id="field_complicationPosteOp" multiple name="complicationPosteOp" [(ngModel)]="accouchement.complicationPosteOps">
+                        <option [ngValue]="getSelected(accouchement.complicationPosteOps, complicationPosteOpOption)" *ngFor="let complicationPosteOpOption of complicationposteops; trackBy: trackComplicationPosteOpById">{{complicationPosteOpOption.designation}}</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mortalite">Mortalite</label>
+                    <select class="form-control" name="mortalite" [(ngModel)]="accouchement.mortalite" id="field_mortalite" >
+                        <option value="OUI">OUI</option>
+                        <option value="NON">NON</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td></tr>
+
+                <tr><td> <h3>PRONOSTIC FOETAL</h3></td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_apgar1Minute">Apgar 1 Minute</label>
+                    <input type="number" class="form-control" name="apgar1Minute" id="field_apgar1Minute"
+                        [(ngModel)]="accouchement.apgar1Minute" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_apgar5Minute">Apgar 5 Minute</label>
+                    <input type="number" class="form-control" name="apgar5Minute" id="field_apgar5Minute"
+                        [(ngModel)]="accouchement.apgar5Minute" />
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_poids">Poids</label>
+                    <input type="number" class="form-control" name="poids" id="field_poids"
+                        [(ngModel)]="accouchement.poids" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sexe">Sexe</label>
+                    <select class="form-control" name="sexe" [(ngModel)]="accouchement.sexe" id="field_sexe" >
+                        <option value="F">F</option>
+                        <option value="M">M</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aspect">Aspect</label>
+                    <input type="text" class="form-control" name="aspect" id="field_aspect"
+                        [(ngModel)]="accouchement.aspect" />
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_vitamineK">Vitamine K</label>
+                    <select class="form-control" name="vitamineK" [(ngModel)]="accouchement.vitamineK" id="field_vitamineK" >
+                        <option value="OUI">OUI</option>
+                        <option value="NON">NON</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hB1">H B 1</label>
+                    <select class="form-control" name="hB1" [(ngModel)]="accouchement.hB1" id="field_hB1" >
+                        <option value="OUI">OUI</option>
+                        <option value="NON">NON</option>
+                        <option value="NON_DEFINI">NON_DEFINI</option>
+                    </select>
+                </div>
+                </td><td>
+                <div class="form-group">
+                    <label for="field_complicationNNE">Complication NNE</label>
+                    <select class="form-control" id="field_complicationNNE" multiple name="complicationNNE" [(ngModel)]="accouchement.complicationNNES">
+                        <option [ngValue]="getSelected(accouchement.complicationNNES, complicationNNEOption)" *ngFor="let complicationNNEOption of complicationnnes; trackBy: trackComplicationNNEById">{{complicationNNEOption.designation}}</option>
+                    </select>
+                </div>
+                </td></tr>
+                <tr><td>
+                <div class="form-group">
+                    <label for="field_malformation">Malformation</label>
+                    <select class="form-control" id="field_malformation" multiple name="malformation" [(ngModel)]="accouchement.malformations">
+                        <option [ngValue]="getSelected(accouchement.malformations, malformationOption)" *ngFor="let malformationOption of malformations; trackBy: trackMalformationById">{{malformationOption.designation}}</option>
+                    </select>
+                </div>
+
+                </td><td></td></tr>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -71,6 +71,14 @@ import { RouterModule } from '@angular/router';
             {
                 path: 'accouchement',
                 loadChildren: './accouchement/accouchement.module#AccouchementV3AccouchementModule'
+            },
+            {
+                path: 'accouchement',
+                loadChildren: './accouchement/accouchement.module#AccouchementV3AccouchementModule'
+            },
+            {
+                path: 'accouchement',
+                loadChildren: './accouchement/accouchement.module#AccouchementV3AccouchementModule'
             }
             /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
         ])

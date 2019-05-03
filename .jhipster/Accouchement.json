@@ -1,0 +1,308 @@
+{
+    "name": "Accouchement",
+    "fields": [
+        {
+            "fieldName": "numeroEntree",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "provenance",
+            "fieldType": "Provenance",
+            "fieldValues": "RURAL,URABAIN,NON_DEFINI"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parite",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "gestite",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "enfantVivant",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mortNe",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fausseCouche",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "avortement",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mFIU",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreCesarienne",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dateDerniereCS",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "typeDerniereCS",
+            "fieldType": "TypeDerniereCS",
+            "fieldValues": "TRANSVERSE,CORPOREAL,NON_DEFINI"
+        },
+        {
+            "fieldName": "indicationDerniereCS",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grossesseSuivis",
+            "fieldType": "OuiNon",
+            "fieldValues": "OUI,NON,NON_DEFINI"
+        },
+        {
+            "fieldName": "ageGestationnel",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "hB",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "siphilis",
+            "fieldType": "PositifNegatif",
+            "fieldValues": "POSITIF,NEGATIF,NON_DEFINI"
+        },
+        {
+            "fieldName": "gAJ",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "groupage",
+            "fieldType": "GroupeSanguin",
+            "fieldValues": "OP,OM,AM,AP,BM,BP,ABP,ABM,NON_DEFINI"
+        },
+        {
+            "fieldName": "tA",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "bCF",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hU",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "etatDeCol",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "etatPDE",
+            "fieldType": "EtatPDE",
+            "fieldValues": "INTACTE,ROMPUE,NON_DEFINI"
+        },
+        {
+            "fieldName": "liquideAmneotique",
+            "fieldType": "LiquideAmneotique",
+            "fieldValues": "CLAIR,TEINTE,PUREE_DE_POIS,MECONIALE,NON_DEFINI"
+        },
+        {
+            "fieldName": "numeroDeFoetus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "etatDeBassin",
+            "fieldType": "EtatBassin",
+            "fieldValues": "RETRECI,PATHOLOGIQUE,NORMAL,NON_DEFINI"
+        },
+        {
+            "fieldName": "typeCesarienne",
+            "fieldType": "TypeCesarienne",
+            "fieldValues": "PROGRAMME,URGENCE,NON_DEFINI"
+        },
+        {
+            "fieldName": "cesarienneEtTravail",
+            "fieldType": "CesarienneEtTravail",
+            "fieldValues": "AU_COURS,EN_DEHORS,NON_DEFINI"
+        },
+        {
+            "fieldName": "modeAnesthesie",
+            "fieldType": "ModeAnesthesie",
+            "fieldValues": "AG,PERIDURALE,NON_DEFINI"
+        },
+        {
+            "fieldName": "typeHysterotomie",
+            "fieldType": "TypeHysterotomie",
+            "fieldValues": "TRANSVERSE,CORPOREAL,NON_DEFINI"
+        },
+        {
+            "fieldName": "incidentPerOperatoire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gesteAssocie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "suitePosteOperatoire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeDelivrance",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "revisionUteriene",
+            "fieldType": "OuiNon",
+            "fieldValues": "OUI,NON,NON_DEFINI"
+        },
+        {
+            "fieldName": "dureeHospit",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mortalite",
+            "fieldType": "OuiNon",
+            "fieldValues": "OUI,NON,NON_DEFINI"
+        },
+        {
+            "fieldName": "apgar1Minute",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "apgar5Minute",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "poids",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sexe",
+            "fieldType": "Sexe",
+            "fieldValues": "F,M,NON_DEFINI"
+        },
+        {
+            "fieldName": "aspect",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vitamineK",
+            "fieldType": "OuiNon",
+            "fieldValues": "OUI,NON,NON_DEFINI"
+        },
+        {
+            "fieldName": "hB1",
+            "fieldType": "OuiNon",
+            "fieldValues": "OUI,NON,NON_DEFINI"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "antecedentChirurgical",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "antecedentChirurgical",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "antecedentMedical",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "antecedentMedical",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "antecedentGyneco",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "antecedentGyneco",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "antecedentObstetrico",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "antecedentObstetrico",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "indicationCS",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "indicationDeCS",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "complicationPosteOp",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "complicationPosteOp",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "pathologieActuelle",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "pathologieActuelle",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "complicationPerOp",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "complicationPerOp",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "malformation",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "malformation",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "complicationNNE",
+            "otherEntityRelationshipName": "accouchement",
+            "relationshipName": "complicationNNE",
+            "otherEntityField": "designation",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190430204901",
+    "entityTableName": "accouchement",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

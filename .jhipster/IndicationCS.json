@@ -1,0 +1,28 @@
+{
+    "name": "IndicationCS",
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "accouchement",
+            "otherEntityRelationshipName": "indicationDeCS",
+            "relationshipName": "accouchement",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190430230251",
+    "entityTableName": "indication_cs",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

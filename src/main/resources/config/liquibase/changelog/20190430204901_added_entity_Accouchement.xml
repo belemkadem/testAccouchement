@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Accouchement.
+    -->
+    <changeSet id="20190430204901-1" author="jhipster">
+        <createTable tableName="accouchement">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="numero_entree" type="varchar(255)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_accouchement_numero_entree" />
+            </column>
+
+            <column name="age" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="provenance" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adresse" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="parite" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="gestite" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="enfant_vivant" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mort_ne" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fausse_couche" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="avortement" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="m_fiu" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nombre_cesarienne" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="date_derniere_cs" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="type_derniere_cs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="indication_derniere_cs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="grossesse_suivis" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="age_gestationnel" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="h_b" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="siphilis" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="g_aj" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="groupage" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="t_a" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="b_cf" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="h_u" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="etat_de_col" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="etat_pde" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="liquide_amneotique" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numero_de_foetus" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="etat_de_bassin" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="type_cesarienne" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cesarienne_et_travail" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mode_anesthesie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="type_hysterotomie" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="incident_per_operatoire" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="geste_associe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="suite_poste_operatoire" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="type_delivrance" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="revision_uteriene" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="duree_hospit" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mortalite" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="apgar_1_minute" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="apgar_5_minute" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="poids" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sexe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="aspect" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="vitamine_k" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="h_b_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="accouchement_antecedent_chirurgical">
+            <column name="antecedent_chirurgical_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, antecedent_chirurgical_id" tableName="accouchement_antecedent_chirurgical"/>
+        
+        <createTable tableName="accouchement_antecedent_medical">
+            <column name="antecedent_medical_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, antecedent_medical_id" tableName="accouchement_antecedent_medical"/>
+        
+        <createTable tableName="accouchement_antecedent_gyneco">
+            <column name="antecedent_gyneco_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, antecedent_gyneco_id" tableName="accouchement_antecedent_gyneco"/>
+        
+        <createTable tableName="accouchement_antecedent_obstetrico">
+            <column name="antecedent_obstetrico_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, antecedent_obstetrico_id" tableName="accouchement_antecedent_obstetrico"/>
+        
+        <createTable tableName="accouchement_indication_decs">
+            <column name="indication_decs_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, indication_decs_id" tableName="accouchement_indication_decs"/>
+        
+        <createTable tableName="accouchement_complication_poste_op">
+            <column name="complication_poste_op_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, complication_poste_op_id" tableName="accouchement_complication_poste_op"/>
+        
+        <createTable tableName="accouchement_pathologie_actuelle">
+            <column name="pathologie_actuelle_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, pathologie_actuelle_id" tableName="accouchement_pathologie_actuelle"/>
+        
+        <createTable tableName="accouchement_complication_per_op">
+            <column name="complication_per_op_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, complication_per_op_id" tableName="accouchement_complication_per_op"/>
+        
+        <createTable tableName="accouchement_malformation">
+            <column name="malformation_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, malformation_id" tableName="accouchement_malformation"/>
+        
+        <createTable tableName="accouchement_complicationnne">
+            <column name="complicationnne_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="accouchement_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="accouchement_id, complicationnne_id" tableName="accouchement_complicationnne"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

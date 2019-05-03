@@ -1,0 +1,28 @@
+{
+    "name": "PathologieActuelle",
+    "fields": [
+        {
+            "fieldName": "designation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "accouchement",
+            "otherEntityRelationshipName": "pathologieActuelle",
+            "relationshipName": "accouchement",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190501203031",
+    "entityTableName": "pathologie_actuelle",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
