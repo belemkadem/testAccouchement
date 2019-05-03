@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190430204857_added_entity_AntecedentMedical.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190430204858_added_entity_AntecedentChirurgical.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190430204859_added_entity_AntecedentGyneco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190430204900_added_entity_AntecedentObstetrico.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190430204901_added_entity_Accouchement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190430230251_added_entity_IndicationCS.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190430230252_added_entity_ComplicationPosteOp.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190501203031_added_entity_PathologieActuelle.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190501203032_added_entity_ComplicationNNE.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190501203033_added_entity_Malformation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190501203034_added_entity_ComplicationPerOp.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190430204901_added_entity_constraints_Accouchement.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>
